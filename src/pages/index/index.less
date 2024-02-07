@@ -1,0 +1,172 @@
+.home-wrap {
+    & .section-first {
+        width: 100vw;
+        height: 100vh;
+        background: url(../../assets/bg.png) no-repeat center;
+        background-size: cover;
+        justify-content: center;
+
+        & .play-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 40px;
+
+        }
+
+        & .line {
+            width: 8px;
+            height: 2px;
+            background: rgba(255,255,255,0.8);
+            margin: 0 8px;
+        }
+
+        & .title-s {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            line-height: 19px;
+        }
+
+        & .title {
+            margin-top: 8px;
+            font-size: 48px;
+            color: #FFFFFF;
+        }
+
+        & .sub-title {
+            margin-top: 16px;
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        & .btn {
+            width: 244px;
+            height: 56px;
+            background: #6E4DF0;
+            border-radius: 8px;
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+            line-height: 56px;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        & .window-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+        }
+
+        & .first-item-wrap {
+            margin-top: 120px;
+            width: 900px;
+            justify-content: space-between;
+            & .icon-item {
+                width: 36px;
+                height: 36px;
+                margin-right: 16px;
+            }
+        }
+    }
+
+    & .section {
+        width: 900px;
+        padding-bottom: 80px;
+        margin: 120px auto 0;
+        justify-content: space-between;
+        & .icon-quotation {
+            width: 32px;
+            height: 20px;
+            align-self: flex-start;
+            position: relative;
+            top: -40px;
+
+        }
+
+        & .content-text {
+            font-size: 32px;
+            color: rgba(255,255,255,0.9);
+            line-height: 43px;
+            align-items: flex-end;
+
+            &.left {
+                align-items: flex-start;
+                & .sub-text{
+                    right: unset;
+                    // left: 8px;
+                    text-indent: 10px;
+                    &::after {
+                        content: "";
+                        left: -8px;
+                        right: unset;
+                    }
+                }
+            }
+        }
+
+        & .sub-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            line-height: 19px;
+            position: relative;
+            right: 8px;
+            margin-top: 10px;
+            &::after {
+                content: "";
+                position: absolute;
+                right: -8px;
+                top: 8px;
+                display: block;
+                margin-left: 8px;
+                width: 4px;
+                height: 4px;
+                background-color: rgba(255,255,255,0.6);
+                border-radius: 4px;
+            }
+        }
+
+        & .tu {
+            width: 498px;
+            height: 328px;
+        }
+    }
+
+    & .section-earth {
+        background: url(../../assets/earth.png) no-repeat center;
+        background-size: contain;
+
+        & .btn {
+            width: 244px;
+            height: 56px;
+            background: rgba(110,77,240,0.3);
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid rgba(110, 77, 240, 0.6);
+            // outline: 1px solid linear-gradient(155deg, rgba(110, 77, 240, 1), rgba(110, 77, 240, 0.28), rgba(110, 77, 240, 1)) ;
+            // border-image: linear-gradient(155deg, rgba(110, 77, 240, 1), rgba(110, 77, 240, 0.28), rgba(110, 77, 240, 1)) 1 1;
+        }
+    }
+
+    & .code-img {
+        width: 112px;
+        height: 112px;
+        background-color: #999;
+    }
+
+    & .code-text {
+        margin-top: 16px;
+        font-size: 16px;
+        color: rgba(255,255,255,0.6);
+    }
+
+    & .copyright {
+        width: 505px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        height: 42px;
+        font-size: 16px;
+        font-family: Microsoft YaHei, Microsoft YaHei;
+        font-weight: 400;
+        color: rgba(255,255,255,0.6);
+        text-align: center;
+    }
+}
