@@ -5,28 +5,33 @@ import assets from '@/assets'
 import 'swiper/css';
 import 'swiper/css/bundle';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { getPosType } from '@/utils';
 
 
 const  HomePage = () => {
 	const [firstSwiper, setFirstSwiper] = useState(null);
     const [secondSwiper, setSecondSwiper] = useState(null);
-
-	const [controlledSwiper, setControlledSwiper] = useState(null);
-	const [loadData, setLoadData] = useState({});
+	const [bundle, setBundle] = useState({});
+	const [url, setUrl] = useState("")
 
 	useEffect(()=>{
-		// axios.get('https://wx.yryz3.com/tauri-updater/releases').then((res)=>{
-		// 	console.log('ssss111s', res)
-		//   })
+		axios.get('/api/tauri-updater/releases').then((res)=>{
+			const  type = getPosType();
+			console.log('res', res.data[0].bundles[type || 'windows'].name);
+			let version = res.data[0].version;
+			let name =  res.data[0].bundles[type || 'windows'].name;
+			let target = getPosType();
+			setBundle({
+				version,
+				name,
+				target: type
+			})
+			setUrl(`/api/tauri-updater/download/${version}/${target}/${name}`)
+		})
 	},[])
 
-	const handleLoad = ()=>{
-		console.log("下载")
-		// axios.get('https://wx.yryz3.com/tauri-updater/releases').then((res)=>{
-		// 	console.log('ssss111s', res)
-		//   })
-	}
-
+	console.log('sssss', bundle)
 
 	return (
 		<div className="home-wrap">
@@ -39,10 +44,10 @@ const  HomePage = () => {
 				</div>
 				<div className='title'>小说推文视频 创作提效神器</div>
 				<div className='sub-title'>小说AI分镜+批量SD绘图+批量关键帧+视频一键合成</div>
-				<div className='btn flexR' onClick={handleLoad}>
-					<img src={assets.windows}  className="window-icon"/>
-					下载  Windows 版本
-				</div>
+				<a className='btn flexR' href={url}>
+					<img src={bundle?.target === 'windows' ? assets.windows : assets.mac}  className="window-icon"/>
+					下载 {bundle?.target === 'windows' ? "windows" : "mac"} 版本
+				</a>
 				<div className='first-item-wrap flexR '>
 					<div className='flexR'>
 						<img src={assets.icon1}  className="icon-item"/>
@@ -134,10 +139,10 @@ const  HomePage = () => {
 				</div>
 				<div className='title'>小说推文视频 创作提效神器</div>
 				<div className='sub-title'>小说AI分镜+批量SD绘图+批量关键帧+视频一键合成</div>
-				<div className='btn flexR' onClick={handleLoad}>
-					<img src={assets.windows}  className="window-icon"/>
-					下载  Windows 版本
-				</div>
+				<a className='btn flexR' href={url}>
+					<img src={bundle?.target === 'windows' ? assets.windows : assets.mac}  className="window-icon"/>
+					下载 {bundle?.target === 'windows' ? "windows" : "mac"} 版本
+				</a >
 			</div>
 			<div className='section flexR' style={{width: '500px'}}>
 				<div className='flexC'>

@@ -1,0 +1,1 @@
+export { getPosType } from './common'

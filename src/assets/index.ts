@@ -8,6 +8,7 @@ const assets = {
     icon3: require("@/assets/icon3.png"),
     iconPlay: require("@/assets/play.png"),
     windows: require("@/assets/windows.png"),
+    mac: require("@/assets/mac.png"),
     tu1: require("@/assets/tu1.png"),
     tu2: require("@/assets/tu2.png"),
     tu3: require("@/assets/tu3.png"),
