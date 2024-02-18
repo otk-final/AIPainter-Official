@@ -9,17 +9,19 @@
     "start": "npm run dev"
   },
   "dependencies": {
-    "umi": "^4.1.1",
     "babel-eslint": "^10.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "swiper": "^11.0.6",
+    "umi": "^4.1.1",
+    "axios": "^1.6.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
-    "typescript": "^5.0.3",
-    "eslint": "^8.56.0"
+    "eslint": "^8.56.0",
+    "typescript": "^5.0.3"
   }
 }

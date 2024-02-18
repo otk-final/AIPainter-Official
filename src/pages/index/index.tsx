@@ -1,9 +1,30 @@
 import './index.less'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Controller, Navigation } from 'swiper/modules';
 import assets from '@/assets'
+import 'swiper/css';
+import 'swiper/css/bundle';
+import { useEffect, useState } from 'react';
+
 
 const  HomePage = () => {
+	const [firstSwiper, setFirstSwiper] = useState(null);
+    const [secondSwiper, setSecondSwiper] = useState(null);
+
+	const [controlledSwiper, setControlledSwiper] = useState(null);
+	const [loadData, setLoadData] = useState({});
+
+	useEffect(()=>{
+		// axios.get('https://wx.yryz3.com/tauri-updater/releases').then((res)=>{
+		// 	console.log('ssss111s', res)
+		//   })
+	},[])
+
 	const handleLoad = ()=>{
 		console.log("下载")
+		// axios.get('https://wx.yryz3.com/tauri-updater/releases').then((res)=>{
+		// 	console.log('ssss111s', res)
+		//   })
 	}
 
 
@@ -61,6 +82,7 @@ const  HomePage = () => {
 					<img src={assets.iconRight}  className="icon-quotation"/>
 				</div>
 			</div>
+
 			<div className='section flexR'>
 				<div  className='flexR'>
 					<img src={assets.iconLeft}  className="icon-quotation"/>
@@ -72,8 +94,37 @@ const  HomePage = () => {
 				</div>
 				<img src={assets.tu3}  className="tu"/>
 			</div>
-			<div className='section'>
-				<div className='title'>用户对我们的评价</div>
+			<div className='section section-comment'>
+				<div className='swiper-title'>用户对我们的评价</div>
+				<div>
+					<Swiper
+						className="swiper-wrap"
+						spaceBetween={0}
+						slidesPerView={1}
+						navigation
+						autoplay
+						modules={[Controller,Navigation]}
+						onSwiper={setFirstSwiper}
+						controller={{ control: secondSwiper }}
+					>
+						{
+							comments.map((i, index)=>{
+								return (
+									<SwiperSlide key={index}>
+										<div className='swiper-item flexR'>
+											<div className='comment-avatar'></div>
+											<div >
+												<div className='comment-name'>{i.name}</div>
+												<div className='comment-text'>{i.text}</div>
+											</div>
+										</div>
+									</SwiperSlide>
+								)
+							})
+						}
+					</Swiper>
+				</div>
+				
 			</div>
 			<div className='section-first section-earth flexC'>
 				<div className='flexR' style={{marginTop: '60px'}}>
@@ -106,3 +157,32 @@ const  HomePage = () => {
 }
 
 export default HomePage
+
+
+const comments = [
+	{
+		avatarUrl: '',
+		name: '抖音某推文大神',
+		text: '极虎漫剪的故事分镜功能非常易用，我可以快速完成一篇小说的分镜。'
+	},
+	{
+		avatarUrl: '',
+		name: '抖音某推文大神2',
+		text: '极虎漫剪的故事分镜功能非常易用，我可以快速完成一篇小说的分镜。'
+	},
+	{
+		avatarUrl: '',
+		name: '抖音某推文大神3',
+		text: '极虎漫剪的故事分镜功能非常易用，我可以快速完成一篇小说的分镜。'
+	},
+	{
+		avatarUrl: '',
+		name: '抖音某推文大神4',
+		text: '极虎漫剪的故事分镜功能非常易用，我可以快速完成一篇小说的分镜。'
+	},
+	{
+		avatarUrl: '',
+		name: '抖音某推文大神5',
+		text: '极虎漫剪的故事分镜功能非常易用，我可以快速完成一篇小说的分镜。'
+	}
+]
