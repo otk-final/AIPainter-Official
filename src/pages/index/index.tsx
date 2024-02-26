@@ -6,32 +6,39 @@ import 'swiper/css';
 import 'swiper/css/bundle';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { getPosType } from '@/utils';
 
 
 const  HomePage = () => {
 	const [firstSwiper, setFirstSwiper] = useState(null);
     const [secondSwiper, setSecondSwiper] = useState(null);
-	const [bundle, setBundle] = useState({});
-	const [url, setUrl] = useState("")
+	const [windowsUrl, setWindowsUrl] = useState("")
+	const [macUrl, setMacUrl] = useState("")
 
 	useEffect(()=>{
 		axios.get('/api/tauri-updater/releases').then((res)=>{
-			const  type = getPosType();
-			console.log('res', res.data[0].bundles[type || 'windows'].name);
-			let version = res.data[0].version;
-			let name =  res.data[0].bundles[type || 'windows'].name;
-			let target = getPosType();
-			setBundle({
-				version,
-				name,
-				target: type
-			})
-			setUrl(`/api/tauri-updater/download/${version}/${target}/${name}`)
+			let wurl = '';
+			let murl = ''
+			for(let i = 0; i< res.data.length; i++) {
+				if(res.data[i]?.bundles?.windows && !wurl) {
+					const version = res.data[i].version;
+					const name = res.data[i].bundles.windows.name;
+					wurl = `/api/tauri-updater/download/${version}/windows/${name}`;
+				}
+				console.log("res.data", res.data[i]?.bundles?.darwin)
+				if(res.data[i]?.bundles && res.data[i]?.bundles?.darwin  && !murl) {
+					console.log("macUrl")
+					const version = res.data[i].version;
+					const name = res.data[i].bundles.darwin.name;
+					murl = `/api/tauri-updater/download/${version}/darwin/${name}`;
+				}
+				if(wurl && murl) {
+					setWindowsUrl(wurl)
+					setMacUrl(murl)
+					return;
+				}
+			}
 		})
 	},[])
-
-	console.log('sssss', bundle)
 
 	return (
 		<div className="home-wrap">
@@ -44,10 +51,17 @@ const  HomePage = () => {
 				</div>
 				<div className='title'>小说推文视频 创作提效神器</div>
 				<div className='sub-title'>小说AI分镜+批量SD绘图+批量关键帧+视频一键合成</div>
-				<a className='btn flexR' href={url}>
-					<img src={bundle?.target === 'windows' ? assets.windows : assets.mac}  className="window-icon"/>
-					下载 {bundle?.target === 'windows' ? "windows" : "mac"} 版本
-				</a>
+				<div className='flexR'>
+					<a className='btn flexR' href={windowsUrl}>
+						<img src={assets.windows }  className="window-icon"/>
+						下载windows版本
+					</a >
+					<a className='btn flexR' href={macUrl}>
+						<img src={assets.mac}  className="window-icon"/>
+						下载mac版本
+					</a >
+				</div>
+				
 				<div className='first-item-wrap flexR '>
 					<div className='flexR'>
 						<img src={assets.icon1}  className="icon-item"/>
@@ -139,10 +153,16 @@ const  HomePage = () => {
 				</div>
 				<div className='title'>小说推文视频 创作提效神器</div>
 				<div className='sub-title'>小说AI分镜+批量SD绘图+批量关键帧+视频一键合成</div>
-				<a className='btn flexR' href={url}>
-					<img src={bundle?.target === 'windows' ? assets.windows : assets.mac}  className="window-icon"/>
-					下载 {bundle?.target === 'windows' ? "windows" : "mac"} 版本
-				</a >
+				<div className='flexR'>
+					<a className='btn flexR' href={windowsUrl}>
+						<img src={assets.windows }  className="window-icon"/>
+						下载windows版本
+					</a >
+					<a className='btn flexR' href={macUrl}>
+						<img src={assets.mac}  className="window-icon"/>
+						下载mac版本
+					</a >
+				</div>
 			</div>
 			<div className='section flexR' style={{width: '500px'}}>
 				<div className='flexC'>
