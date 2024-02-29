@@ -19,6 +19,7 @@ const  HomePage = () => {
 			let wurl = '';
 			let murl = ''
 			for(let i = 0; i< res.data.length; i++) {
+				// console.log("wurl", wurl, murl)
 				if(res.data[i]?.bundles?.windows && !wurl) {
 					const version = res.data[i].version;
 					const name = res.data[i].bundles.windows.name;
@@ -31,12 +32,14 @@ const  HomePage = () => {
 					const name = res.data[i].bundles.darwin.name;
 					murl = `/api/tauri-updater/download/${version}/darwin/${name}`;
 				}
-				if(wurl && murl) {
-					setWindowsUrl(wurl)
-					setMacUrl(murl)
-					return;
-				}
+				// if(wurl && murl) {
+				// 	setWindowsUrl(wurl)
+				// 	setMacUrl(murl)
+				// 	return;
+				// }
 			}
+			setWindowsUrl(wurl)
+			setMacUrl(murl)
 		})
 	},[])
 
@@ -161,7 +164,7 @@ const  HomePage = () => {
 					<a className='btn flexR' href={macUrl}>
 						<img src={assets.mac}  className="window-icon"/>
 						下载mac版本
-					</a >
+					</a>
 				</div>
 			</div>
 			<div className='section flexR' style={{width: '500px'}}>
