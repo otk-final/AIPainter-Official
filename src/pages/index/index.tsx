@@ -35,7 +35,6 @@ const HomePage = () => {
 					const name = res.data[i].bundles.windows.name;
 					wurl = `/download/${version}/windows/${name}`;
 				}
-				console.log("res.data", res.data[i]?.bundles?.darwin)
 				if (res.data[i]?.bundles && res.data[i]?.bundles?.darwin && !murl) {
 					console.log("macUrl")
 					const version = res.data[i].version;
@@ -44,7 +43,7 @@ const HomePage = () => {
 				}
 			}
 			if (wurl) setWindowsUrl(serverUrl + wurl);
-			if (murl) setWindowsUrl(serverUrl + murl);
+			if (murl) setMacUrl(serverUrl + murl);
 		})
 	}, [])
 
