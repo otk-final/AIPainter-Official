@@ -7,9 +7,8 @@ import 'swiper/css/bundle';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const serverUrl = "https://wx.yryz3.com/tauri-updater"
 const defaultAxios = axios.create({
-	baseURL: serverUrl,
+	baseURL: process.env.UPDATER_HOST,
 	timeout: 60000,
 	headers: { //即将被发送的自定义请求头
 		"Content-Type": "application/json;charset=utf-8",
@@ -17,7 +16,6 @@ const defaultAxios = axios.create({
 	},
 	withCredentials: false //表示跨域请求时是否需要使用凭证
 })
-
 
 const HomePage = () => {
 	const [firstSwiper, setFirstSwiper] = useState(null);
@@ -42,8 +40,8 @@ const HomePage = () => {
 					murl = `/download/${version}/darwin/${name}`;
 				}
 			}
-			if (wurl) setWindowsUrl(serverUrl + wurl);
-			if (murl) setMacUrl(serverUrl + murl);
+			if (wurl) setWindowsUrl(process.env.UPDATER_HOST + wurl);
+			if (murl) setMacUrl(process.env.UPDATER_HOST + murl);
 		})
 	}, [])
 

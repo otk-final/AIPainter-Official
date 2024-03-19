@@ -3,7 +3,7 @@
   "author": "",
   "scripts": {
     "dev": "umi dev",
-    "build": "umi build",
+    "build": "NODE_ENV=production umi build",
     "postinstall": "umi setup",
     "setup": "umi setup",
     "start": "npm run dev"

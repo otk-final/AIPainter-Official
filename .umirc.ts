@@ -5,11 +5,7 @@ export default defineConfig({
     { path: "/", component: "@/pages/index/index" },
   ],
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/', // 资源访问路径，默认/
-  // proxy: {
-  //   '/api': {
-  //     'target': 'https://wx.yryz3.com/',
-  //     'changeOrigin': true,
-  //     'pathRewrite': { '^/api' : '' },
-  //   },
-  // },
+  define: {
+    "process.env.UPDATER_HOST": process.env.UPDATER_HOST,
+  }
 });
