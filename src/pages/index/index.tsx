@@ -41,6 +41,21 @@ const HomePage = () => {
 		})
 	}, [])
 
+	const renderItem =(i, index: number )=>{
+		return (
+			<div className='content-ww' key={index}>
+				<div className='content-wrap flexC'>
+					<img src={i.icon} className="icons" />
+					<div className='h1'>{i.h1}</div>
+					<div className='h2'>{i.h2}</div>
+					<div className='h-line' style={{background: i.lineColor}}></div>
+					<img src={i.bgUrl} className="img1"/>
+				</div>
+				<div className={`bg bg${index+1}`}></div>
+			</div>
+		)
+	}
+
 	return (
 		<div className="home-wrap flexC">
 			<div className='section-first flexC'>
@@ -66,87 +81,7 @@ const HomePage = () => {
 			</div>
 			<div className='section-title'>产品亮点</div>
 			<div className='section-sub-title'>AI翻拍（一键追爆款，剪同款）✓   Stable Diffusion ✓   GPT-3.5 Turbo ✓   翻译 ✓   AI配音 ✓   </div>
-			<div className='content-wrap flexC'>
-				<img src={assets.icon1} className="icons" />
-				<div className='h1'>无需显卡</div>
-				<div className='h2'>告别昂贵的NVIDIA显卡，轻松释放创作激情。</div>
-				<div className='h-line'></div>
-				<img src={assets.img2} className="img1"/>
-			</div>
-			<div className='bg bg1'></div>
-			<div className='content-wrap flexC'>
-				<img src={assets.icon2} className="icons" />
-				<div className='h1'>零配置之轻奢</div>
-				<div className='h2'>摒弃繁琐安装步骤，一键启动，畅享创意无阻。</div>
-				<div className='h-line' style={{background: '#E17AB4'}}></div>
-				<img src={assets.img3} className="img1"/>
-			</div>
-			<div className='bg bg2'></div>
-			<div className='content-wrap flexC'>
-				<img src={assets.icon3} className="icons" />
-				<div className='h1'>双系统畅行</div>
-				<div className='h2'>Windows、Mac双系统兼容，灵活驾驭创意之舟。</div>
-				<div className='h-line' style={{background: '#50A4E3'}}></div>
-				<img src={assets.img4} className="img1"/>
-			</div>
-			<div className='bg bg3'></div>
-			<div className='content-wrap flexC'>
-				<img src={assets.icon4} className="icons" />
-				<div className='h1'>SDXL巨无霸模型</div>
-				<div className='h2'>1024分辨率直出，画面精致细腻，高清放大令4K成为细节的新标杆。</div>
-				<div className='h-line' style={{background: '#D680FF'}}></div>
-				<img src={assets.img5} className="img1"/>
-			</div>
-			<div className='bg bg4'></div>
-			<div className='content-wrap flexC'>
-				<img src={assets.icon5} className="icons" />
-				<div className='h1'>AI翻拍精粹</div>
-				<div className='h2'>智能角色动作参照，画面质感贴近原片，创意更上一层楼。</div>
-				<div className='h-line' style={{background: '#58B4D1'}}></div>
-				<img src={assets.img6} className="img1"/>
-			</div>
-			<div className='bg bg3 bg5'></div>
-			<div className='content-wrap flexC'>
-				<img src={assets.icon6} className="icons" />
-				<div className='h1'>智能创作引领</div>
-				<div className='h2'>AI智能分镜，GPT场景描述，中文提示词助您快速勾勒完美画面。</div>
-				<div className='h-line' style={{background: '#838EF1'}}></div>
-				<img src={assets.img7} className="img1"/>
-			</div>
-			<div className='bg bg6'></div>
-			<div className='content-wrap flexC'>
-				<img src={assets.icon7} className="icons" />
-				<div className='h1'>AI文风妙笔</div>
-				<div className='h2'>换字不换意，文案同质化轻松躲避，创作灵感无限。</div>
-				<div className='h-line' style={{background: '#E17AB4'}}></div>
-				<img src={assets.img8} className="img1"/>
-			</div>
-			<div className='bg bg2 bg7'></div>
-			<div className='content-wrap flexC'>
-				<img src={assets.icon8} className="icons" />
-				<div className='h1'>AI声音魅力</div>
-				<div className='h2'>60余种AI语音，横跨性别、年龄、地域，各种语种涵盖无缺。</div>
-				<div className='h-line' style={{background: '#50A4E3'}}></div>
-				<img src={assets.img9} className="img1"/>
-			</div>
-			<div className='bg bg8'></div>
-			<div className='content-wrap flexC'>
-				<img src={assets.icon9} className="icons" />
-				<div className='h1'>自动生成精华</div>
-				<div className='h2'>智能关键帧动效，画面生动有趣，创作效率飙升。</div>
-				<div className='h-line' style={{background: '#D680FF'}}></div>
-				<img src={assets.img10} className="img1"/>
-			</div>
-			<div className='bg bg1 bg9'></div>
-			<div className='content-wrap flexC'>
-				<img src={assets.icon10} className="icons" />
-				<div className='h1'>超值价格体验</div>
-				<div className='h2'>比肩一顿精致KFC的价格，享受顶级视频创作体验，创业之门轻松开启。</div>
-				<div className='h-line' style={{background: '#58B4D1'}}></div>
-				<img src={assets.img11} className="img1"/>
-			</div>
-			<div className='bg bg3 bg10'></div>
-		
+			{lists.map(renderItem)}
 			<div className='section-first last  flexC'>
 				<div className='flexR'>
 					<div className='line' />
@@ -186,3 +121,75 @@ const HomePage = () => {
 
 export default HomePage
 
+const lists = [
+	{
+		h1: '无需显卡',
+		h2: '告别昂贵的NVIDIA显卡，轻松释放创作激情。',
+		lineColor: '#838EF1',
+		icon: assets.icon1,
+		bgUrl: assets.img2,
+	},
+	{
+		h1: '零配置之轻奢',
+		h2: '摒弃繁琐安装步骤，一键启动，畅享创意无阻。',
+		lineColor: '#E17AB4',
+		icon: assets.icon2,
+		bgUrl: assets.img3,
+	},
+	{
+		h1: '双系统畅行',
+		h2: 'Windows、Mac双系统兼容，灵活驾驭创意之舟。',
+		lineColor: '#50A4E3',
+		icon: assets.icon3,
+		bgUrl: assets.img4,
+	},
+	{
+		h1: 'SDXL巨无霸模型',
+		h2: '1024分辨率直出，画面精致细腻，高清放大令4K成为细节的新标杆。',
+		lineColor: '#D680FF',
+		icon: assets.icon4,
+		bgUrl: assets.img5,
+	},
+	{
+		h1: 'AI翻拍精粹',
+		h2: '智能角色动作参照，画面质感贴近原片，创意更上一层楼。',
+		lineColor: '#58B4D1',
+		icon: assets.icon5,
+		bgUrl: assets.img6,
+	},
+	{
+		h1: '智能创作引领',
+		h2: 'AI智能分镜，GPT场景描述，中文提示词助您快速勾勒完美画面。',
+		lineColor: '#838EF1',
+		icon: assets.icon6,
+		bgUrl: assets.img7,
+	},
+	{
+		h1: 'AI文风妙笔',
+		h2: '换字不换意，文案同质化轻松躲避，创作灵感无限。',
+		lineColor: '',
+		icon: assets.icon7,
+		bgUrl: assets.img8,
+	},
+	{
+		h1: 'AI声音魅力',
+		h2: '60余种AI语音，横跨性别、年龄、地域，各种语种涵盖无缺。',
+		lineColor: '#50A4E3',
+		icon: assets.icon8,
+		bgUrl: assets.img9,
+	},
+	{
+		h1: '自动生成精华',
+		h2: '智能关键帧动效，画面生动有趣，创作效率飙升。',
+		lineColor: '#D680FF',
+		icon: assets.icon9,
+		bgUrl: assets.img10,
+	},
+	{
+		h1: '超值价格体验',
+		h2: '比肩一顿精致KFC的价格，享受顶级视频创作体验，创业之门轻松开启。',
+		lineColor: '#58B4D1',
+		icon: assets.icon10,
+		bgUrl: assets.img11,
+	}
+]

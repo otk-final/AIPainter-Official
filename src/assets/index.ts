@@ -1,8 +1,6 @@
 
 const assets = {
     bg: require("@/assets/bg.png"),
-    iconLeft: require("@/assets/icon-left.png"),
-    iconRight: require("@/assets/icon-right.png"),
     icon1: require("@/assets/icon1.png"),
     icon2: require("@/assets/icon2.png"),
     icon3: require("@/assets/icon3.png"),
@@ -13,7 +11,6 @@ const assets = {
     icon8: require("@/assets/icon8.png"),
     icon9: require("@/assets/icon9.png"),
     icon10: require("@/assets/icon10.png"),
-    iconPlay: require("@/assets/play.png"),
     windows: require("@/assets/windows.png"),
     mac: require("@/assets/mac.png"),
     img1: require("@/assets/img1.png"),
@@ -27,7 +24,6 @@ const assets = {
     img9: require("@/assets/img9.png"),
     img10: require("@/assets/img10.png"),
     img11: require("@/assets/img11.png"),
-    earth: require("@/assets/earth.png"),
     logo: require("@/assets/logo.png"),
     qq: require("@/assets/qq.png"),
     wechat: require("@/assets/wechat.png"),

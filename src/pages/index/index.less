@@ -2,58 +2,58 @@
     background-color: #111629;
 
     & .bg {
-        width: 100vw;
+        width: 100%;
         height: 800px;
         position: absolute;
         left: 0;
         right: 0;
-        background-size: cover;
-        &.bg1 {
+        top: 436px;
+        &.bg1, &.bg9 {
             background: url(../../assets/bg1.png) no-repeat center;
             background-size: cover;
-            top: 1764px;
+            // top: 1764px;
         }
-        &.bg2 {
-            top: 2928px;
+        &.bg2, &.bg7 {
+            // top: 2928px;
             background: url(../../assets/bg2.png) no-repeat center;
             background-size: cover;
         }
-        &.bg3 {
-            top: 4091px;
+        &.bg3, &.bg5, &.bg10 {
+            // top: 4091px;
             background: url(../../assets/bg3.png) no-repeat center;
             background-size: cover;
         }
         &.bg4 {
-            top: 5254px;
+            // top: 5254px;
             background: url(../../assets/bg4.png) no-repeat center;
             background-size: cover;
         }
         &.bg5 {
-            top: 6418px;
+            // top: 6418px;
         }
         &.bg6 {
-            top: 7582px;
+            // top: 7582px;
             background: url(../../assets/bg6.png) no-repeat center;
             background-size: cover;
         }
         &.bg7 {
-            top: 8744px;
+            // top: 8744px;
         }
         &.bg8 {
-            top: 9909px;
+            // top: 9909px;
             background: url(../../assets/bg8.png) no-repeat center;
             background-size: cover;
         }
         &.bg9 {
-            top: 11072px;
+            // top: 11072px;
         }
         &.bg10 {
-            top: 12235px;
+            // top: 12235px;
         }
     }
 
     & .section-first {
-        width: 100vw;
+        width: 100%;
         height: 1100px;
         background: url(../../assets/bg.png) no-repeat center;
         background-size: cover;
@@ -62,7 +62,6 @@
         &.last {
             height: auto;
             background-image: none;
-            // padding-top: 60px;
             margin-top: 160px;
         }
 
@@ -140,10 +139,14 @@
         margin-top: 24px;
     }
 
+    & .content-ww {
+        width: 100%;
+        position: relative;
+    }
+
     & .content-wrap {
         width: 1200px;
         margin: 0 auto;
-        // justify-content: flex-start;
         align-items: flex-start;
         z-index: 9;
         position: relative;
