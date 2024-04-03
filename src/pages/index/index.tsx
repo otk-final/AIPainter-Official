@@ -1,6 +1,4 @@
 import './index.less'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Controller, Navigation } from 'swiper/modules';
 import assets from '@/assets'
 import 'swiper/css';
 import 'swiper/css/bundle';
@@ -18,8 +16,6 @@ const defaultAxios = axios.create({
 })
 
 const HomePage = () => {
-	const [firstSwiper, setFirstSwiper] = useState(null);
-	const [secondSwiper, setSecondSwiper] = useState(null);
 	const [windowsUrl, setWindowsUrl] = useState("")
 	const [macUrl, setMacUrl] = useState("")
 
@@ -46,9 +42,9 @@ const HomePage = () => {
 	}, [])
 
 	return (
-		<div className="home-wrap">
+		<div className="home-wrap flexC">
 			<div className='section-first flexC'>
-				<img src={assets.iconPlay} className="play-icon" />
+				<img src={assets.logo} className="logo-icon" />
 				<div className='flexR'>
 					<div className='line' />
 					<div className='title-s'>本地 &amp; 云端版，注册即可免费体验</div>
@@ -61,97 +57,98 @@ const HomePage = () => {
 						<img src={assets.windows} className="window-icon" />
 						下载windows版本
 					</a >
-					<a className='btn flexR' href={macUrl}>
+					<a className='btn flexR right' href={macUrl}>
 						<img src={assets.mac} className="window-icon" />
 						下载mac版本
 					</a >
 				</div>
-
-				<div className='first-item-wrap flexR '>
-					<div className='flexR'>
-						<img src={assets.icon1} className="icon-item" />
-						<div>一键完成故事AI分镜</div>
-					</div>
-					<div className='flexR'>
-						<img src={assets.icon2} className="icon-item" />
-						<div>一键完成故事批量绘图</div>
-					</div>
-					<div className='flexR'>
-						<img src={assets.icon3} className="icon-item" />
-						<div>一键完成图文视频合成</div>
-					</div>
-				</div>
+				<img src={assets.img1} className="img1" style={{height: '525px'}}/>
 			</div>
-			<div className='section flexR'>
+			<div className='section-title'>产品亮点</div>
+			<div className='section-sub-title'>AI翻拍（一键追爆款，剪同款）✓   Stable Diffusion ✓   GPT-3.5 Turbo ✓   翻译 ✓   AI配音 ✓   </div>
+			<div className='content-wrap flexC'>
+				<img src={assets.icon1} className="icons" />
+				<div className='h1'>无需显卡</div>
+				<div className='h2'>告别昂贵的NVIDIA显卡，轻松释放创作激情。</div>
+				<div className='h-line'></div>
+				<img src={assets.img2} className="img1"/>
+			</div>
+			<div className='bg bg1'></div>
+			<div className='content-wrap flexC'>
+				<img src={assets.icon2} className="icons" />
+				<div className='h1'>零配置之轻奢</div>
+				<div className='h2'>摒弃繁琐安装步骤，一键启动，畅享创意无阻。</div>
+				<div className='h-line' style={{background: '#E17AB4'}}></div>
+				<img src={assets.img3} className="img1"/>
+			</div>
+			<div className='bg bg2'></div>
+			<div className='content-wrap flexC'>
+				<img src={assets.icon3} className="icons" />
+				<div className='h1'>双系统畅行</div>
+				<div className='h2'>Windows、Mac双系统兼容，灵活驾驭创意之舟。</div>
+				<div className='h-line' style={{background: '#50A4E3'}}></div>
+				<img src={assets.img4} className="img1"/>
+			</div>
+			<div className='bg bg3'></div>
+			<div className='content-wrap flexC'>
+				<img src={assets.icon4} className="icons" />
+				<div className='h1'>SDXL巨无霸模型</div>
+				<div className='h2'>1024分辨率直出，画面精致细腻，高清放大令4K成为细节的新标杆。</div>
+				<div className='h-line' style={{background: '#D680FF'}}></div>
+				<img src={assets.img5} className="img1"/>
+			</div>
+			<div className='bg bg4'></div>
+			<div className='content-wrap flexC'>
+				<img src={assets.icon5} className="icons" />
+				<div className='h1'>AI翻拍精粹</div>
+				<div className='h2'>智能角色动作参照，画面质感贴近原片，创意更上一层楼。</div>
+				<div className='h-line' style={{background: '#58B4D1'}}></div>
+				<img src={assets.img6} className="img1"/>
+			</div>
+			<div className='bg bg3 bg5'></div>
+			<div className='content-wrap flexC'>
+				<img src={assets.icon6} className="icons" />
+				<div className='h1'>智能创作引领</div>
+				<div className='h2'>AI智能分镜，GPT场景描述，中文提示词助您快速勾勒完美画面。</div>
+				<div className='h-line' style={{background: '#838EF1'}}></div>
+				<img src={assets.img7} className="img1"/>
+			</div>
+			<div className='bg bg6'></div>
+			<div className='content-wrap flexC'>
+				<img src={assets.icon7} className="icons" />
+				<div className='h1'>AI文风妙笔</div>
+				<div className='h2'>换字不换意，文案同质化轻松躲避，创作灵感无限。</div>
+				<div className='h-line' style={{background: '#E17AB4'}}></div>
+				<img src={assets.img8} className="img1"/>
+			</div>
+			<div className='bg bg2 bg7'></div>
+			<div className='content-wrap flexC'>
+				<img src={assets.icon8} className="icons" />
+				<div className='h1'>AI声音魅力</div>
+				<div className='h2'>60余种AI语音，横跨性别、年龄、地域，各种语种涵盖无缺。</div>
+				<div className='h-line' style={{background: '#50A4E3'}}></div>
+				<img src={assets.img9} className="img1"/>
+			</div>
+			<div className='bg bg8'></div>
+			<div className='content-wrap flexC'>
+				<img src={assets.icon9} className="icons" />
+				<div className='h1'>自动生成精华</div>
+				<div className='h2'>智能关键帧动效，画面生动有趣，创作效率飙升。</div>
+				<div className='h-line' style={{background: '#D680FF'}}></div>
+				<img src={assets.img10} className="img1"/>
+			</div>
+			<div className='bg bg1 bg9'></div>
+			<div className='content-wrap flexC'>
+				<img src={assets.icon10} className="icons" />
+				<div className='h1'>超值价格体验</div>
+				<div className='h2'>比肩一顿精致KFC的价格，享受顶级视频创作体验，创业之门轻松开启。</div>
+				<div className='h-line' style={{background: '#58B4D1'}}></div>
+				<img src={assets.img11} className="img1"/>
+			</div>
+			<div className='bg bg3 bg10'></div>
+		
+			<div className='section-first last  flexC'>
 				<div className='flexR'>
-					<img src={assets.iconLeft} className="icon-quotation" />
-					<div className='content-text flexC '>
-						<div>故事分镜</div>
-						<div>批量绘图</div>
-						<div>一键完成</div>
-						<div className='sub-text'>支持基于AI能力的故事分镜</div>
-						<div className='sub-text'>支持基于自定义模板的批量绘图</div>
-					</div>
-				</div>
-				<img src={assets.tu1} className="tu" />
-			</div>
-			<div className='section flexR'>
-				<img src={assets.tu2} className="tu" />
-				<div className='flexR'>
-					<div className='content-text flexC left'>
-						<div>抖音视频下载</div>
-						<div className='sub-text'>支持基于故事情节的单镜头绘图调整</div>
-						<div className='sub-text'>支持SD各类模型的自定义调整</div>
-					</div>
-					<img src={assets.iconRight} className="icon-quotation" />
-				</div>
-			</div>
-
-			<div className='section flexR'>
-				<div className='flexR'>
-					<img src={assets.iconLeft} className="icon-quotation" />
-					<div className='content-text flexC '>
-						<div>一键追爆款</div>
-						<div className='sub-text'>支持基于镜头字幕时长的批量关键帧生成</div>
-						<div className='sub-text'>支持丰富画面特效的图文视频一键合成</div>
-					</div>
-				</div>
-				<img src={assets.tu3} className="tu" />
-			</div>
-			<div className='section section-comment'>
-				<div className='swiper-title'>用户对我们的评价</div>
-				<div>
-					<Swiper
-						className="swiper-wrap"
-						spaceBetween={0}
-						slidesPerView={1}
-						navigation
-						autoplay
-						modules={[Controller, Navigation]}
-						onSwiper={setFirstSwiper}
-						controller={{ control: secondSwiper }}
-					>
-						{
-							comments.map((i, index) => {
-								return (
-									<SwiperSlide key={index}>
-										<div className='swiper-item flexR'>
-											<div className='comment-avatar'></div>
-											<div >
-												<div className='comment-name'>{i.name}</div>
-												<div className='comment-text'>{i.text}</div>
-											</div>
-										</div>
-									</SwiperSlide>
-								)
-							})
-						}
-					</Swiper>
-				</div>
-
-			</div>
-			<div className='section-first section-earth flexC'>
-				<div className='flexR' style={{ marginTop: '60px' }}>
 					<div className='line' />
 					<div className='title-s'>本地 &amp; 云端版，注册即可免费体验</div>
 					<div className='line' />
@@ -163,24 +160,25 @@ const HomePage = () => {
 						<img src={assets.windows} className="window-icon" />
 						下载windows版本
 					</a >
-					<a className='btn flexR' href={macUrl}>
+					<a className='btn flexR right' href={macUrl}>
 						<img src={assets.mac} className="window-icon" />
 						下载mac版本
 					</a>
 				</div>
 			</div>
-			<div className='section flexR' style={{ width: '500px' }}>
+			<div className='flexR' >
 				<div className='flexC'>
-					<img src="" className='code-img' />
+					<img src={assets.wechat} className='code-img' />
 					<div className='code-text'>扫码加入微信群</div>
 				</div>
-				<div className='flexC'>
-					<img src="" className='code-img' />
+				<div className='flexC' style={{marginLeft: '30px'}}>
+					<img src={assets.qq}  className='code-img' />
 					<div className='code-text'>扫码加入微信群</div>
 				</div>
 			</div>
+			<img src={assets.logo} className="bottom-logo-icon" />
 			<div className='copyright'>
-				Copyright © 2024 ALADDIN SINGULARITY HOLDING LIMITED 版权所有京ICP备2021016160号-2
+			Copyright © 2024 Wuhan Turing Innovation Technology Co., Ltd.All rights reserved.<br/>鄂ICP备2024046738号-1
 			</div>
 		</div>
 	);
@@ -188,31 +186,3 @@ const HomePage = () => {
 
 export default HomePage
 
-
-const comments = [
-	{
-		avatarUrl: '',
-		name: '抖音某推文大神',
-		text: '极虎漫剪的故事分镜功能非常易用，我可以快速完成一篇小说的分镜。'
-	},
-	{
-		avatarUrl: '',
-		name: '抖音某推文大神2',
-		text: '极虎漫剪的故事分镜功能非常易用，我可以快速完成一篇小说的分镜。'
-	},
-	{
-		avatarUrl: '',
-		name: '抖音某推文大神3',
-		text: '极虎漫剪的故事分镜功能非常易用，我可以快速完成一篇小说的分镜。'
-	},
-	{
-		avatarUrl: '',
-		name: '抖音某推文大神4',
-		text: '极虎漫剪的故事分镜功能非常易用，我可以快速完成一篇小说的分镜。'
-	},
-	{
-		avatarUrl: '',
-		name: '抖音某推文大神5',
-		text: '极虎漫剪的故事分镜功能非常易用，我可以快速完成一篇小说的分镜。'
-	}
-]

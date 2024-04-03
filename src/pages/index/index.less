@@ -1,16 +1,76 @@
 .home-wrap {
+    background-color: #111629;
+
+    & .bg {
+        width: 100vw;
+        height: 800px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-size: cover;
+        &.bg1 {
+            background: url(../../assets/bg1.png) no-repeat center;
+            background-size: cover;
+            top: 1764px;
+        }
+        &.bg2 {
+            top: 2928px;
+            background: url(../../assets/bg2.png) no-repeat center;
+            background-size: cover;
+        }
+        &.bg3 {
+            top: 4091px;
+            background: url(../../assets/bg3.png) no-repeat center;
+            background-size: cover;
+        }
+        &.bg4 {
+            top: 5254px;
+            background: url(../../assets/bg4.png) no-repeat center;
+            background-size: cover;
+        }
+        &.bg5 {
+            top: 6418px;
+        }
+        &.bg6 {
+            top: 7582px;
+            background: url(../../assets/bg6.png) no-repeat center;
+            background-size: cover;
+        }
+        &.bg7 {
+            top: 8744px;
+        }
+        &.bg8 {
+            top: 9909px;
+            background: url(../../assets/bg8.png) no-repeat center;
+            background-size: cover;
+        }
+        &.bg9 {
+            top: 11072px;
+        }
+        &.bg10 {
+            top: 12235px;
+        }
+    }
+
     & .section-first {
         width: 100vw;
-        height: 100vh;
+        height: 1100px;
         background: url(../../assets/bg.png) no-repeat center;
         background-size: cover;
-        justify-content: center;
+        justify-content: flex-start;
 
-        & .play-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 40px;
+        &.last {
+            height: auto;
+            background-image: none;
+            // padding-top: 60px;
+            margin-top: 160px;
+        }
 
+        & .logo-icon {
+            width: 114px;
+            height: 32px;
+            margin-bottom: 152px;
+            margin-top: 16px;
         }
 
         & .line {
@@ -21,7 +81,7 @@
         }
 
         & .title-s {
-            font-size: 14px;
+            font-size: 18px;
             color: rgba(255,255,255,0.8);
             line-height: 19px;
         }
@@ -34,21 +94,25 @@
 
         & .sub-title {
             margin-top: 16px;
-            font-size: 18px;
+            font-size: 24px;
             color: rgba(255,255,255,0.8);
         }
 
         & .btn {
-            width: 244px;
-            height: 56px;
-            background: #6E4DF0;
+            width: 200px;
+            height: 48px;
+            background: #BA2BFF;
             border-radius: 8px;
             font-size: 16px;
             color: rgba(255,255,255,0.9);
             line-height: 56px;
             justify-content: center;
             text-decoration: none;
-            margin: 60px 20px 0;
+            margin: 78px 20px 120px;
+
+            &.right {
+                background-color: #429FE7;
+            }
         }
 
         & .window-icon {
@@ -56,100 +120,63 @@
             height: 20px;
             margin-right: 12px;
         }
-
-        & .first-item-wrap {
-            margin-top: 120px;
-            width: 900px;
-            justify-content: space-between;
-            & .icon-item {
-                width: 36px;
-                height: 36px;
-                margin-right: 16px;
-            }
-        }
     }
 
-    & .section {
-        width: 900px;
-        padding-bottom: 80px;
-        margin: 120px auto 0;
-        justify-content: space-between;
-        & .icon-quotation {
-            width: 32px;
-            height: 20px;
-            align-self: flex-start;
-            position: relative;
-            top: -40px;
+    & .img1 {
+        width: 1200px;
+        height: 752px;
+    }
 
+    & .section-title {
+        margin-top: 100px;
+        font-size: 48px;
+        color: rgba(255,255,255,0.9);
+    }
+
+    & .section-sub-title {
+        font-size: 22px;
+        color: rgba(255,255,255,0.4);
+        line-height: 30px;
+        margin-top: 24px;
+    }
+
+    & .content-wrap {
+        width: 1200px;
+        margin: 0 auto;
+        // justify-content: flex-start;
+        align-items: flex-start;
+        z-index: 9;
+        position: relative;
+        & .icons {
+            width: 64px;
+            height: 67px;
+            margin-top: 160px;
+            
         }
 
-        & .content-text {
-            font-size: 32px;
+        & .h1 {
+            font-size: 38px;
             color: rgba(255,255,255,0.9);
-            line-height: 43px;
-            align-items: flex-end;
-
-            &.left {
-                align-items: flex-start;
-                & .sub-text{
-                    right: unset;
-                    // left: 8px;
-                    text-indent: 10px;
-                    &::after {
-                        content: "";
-                        left: -8px;
-                        right: unset;
-                    }
-                }
-            }
+            margin-top: 32px;
         }
-
-        & .sub-text {
-            font-size: 14px;
+        & .h2 {
+            margin-top: 12px;
+            font-size: 22px;
             color: rgba(255,255,255,0.6);
-            line-height: 19px;
-            position: relative;
-            right: 8px;
-            margin-top: 10px;
-            &::after {
-                content: "";
-                position: absolute;
-                right: -8px;
-                top: 8px;
-                display: block;
-                margin-left: 8px;
-                width: 4px;
-                height: 4px;
-                background-color: rgba(255,255,255,0.6);
-                border-radius: 4px;
-            }
         }
-
-        & .tu {
-            width: 498px;
-            height: 328px;
-        }
-    }
-
-    & .section-earth {
-        background: url(../../assets/earth.png) no-repeat center;
-        background-size: contain;
-
-        & .btn {
-            width: 244px;
-            height: 56px;
-            background: rgba(110,77,240,0.3);
-            overflow: hidden;
-            border-radius: 8px;
-            border: 1px solid rgba(110, 77, 240, 0.6);
-            text-decoration: none;
+        & .h-line {
+            width: 20px;
+            height: 4px;
+            background: #838EF1;
+            margin-top: 32px;
+            margin-bottom: 20px;
         }
     }
 
     & .code-img {
-        width: 112px;
-        height: 112px;
-        background-color: #999;
+        width: 160px;
+        height: 160px;
+        border-radius: 8px;
     }
 
     & .code-text {
@@ -158,93 +185,19 @@
         color: rgba(255,255,255,0.6);
     }
 
+    & .bottom-logo-icon {
+        width: 114px;
+        height: 32px;
+        margin-top: 156px;
+        margin-bottom: 26px;
+    }
+
     & .copyright {
-        width: 505px;
-        margin: 0 auto;
         padding-bottom: 30px;
-        height: 42px;
         font-size: 16px;
         font-family: Microsoft YaHei, Microsoft YaHei;
         font-weight: 400;
         color: rgba(255,255,255,0.6);
         text-align: center;
-    }
-
-    & .section-comment {
-
-        & .swiper-button-prev , & .swiper-button-next {
-            width: 32px;
-            height: 32px;
-            background-color: rgba(110, 77, 240, 1);
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 32px;
-
-            &::after {
-                color: #FFFFFF;
-                font-size: 16px;
-            }
-        }
-
-        & .swiper-button-prev {
-            left: 0px;
-            right: auto;
-
-            &::after {
-                color: rgba(255,255,255,0.6);
-                font-size: 16px;
-            }
-        }
-
-        & .swiper-button-next {
-            left: auto;
-            right: 0px;
-        }
-
-        & .swiper-wrapper {
-            width: 500px;
-            left: 50%;
-            margin-left: -250px;
-        }
-        
-    }
-
-    & .swiper-title {
-        text-align: center;
-        font-size: 32px;
-        color: rgba(255,255,255,0.9);
-        line-height: 43px;
-        margin-bottom: 50px;
-    }
-
-    & .swiper-wrap {
-        width: 800px;
-
-    }
-
-    & .swiper-item {
-        width: 500px;
-        justify-content: center;
-        & .comment-avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 45px;
-            background-color: #FFFFFF;
-            margin-right: 30px;
-            flex: 0 0 90px;
-        }
-
-        & .comment-name {
-            font-size: 20px;
-            color: rgba(255,255,255,0.8);
-            line-height: 27px;
-        }
-
-        & .comment-text {
-            font-size: 16px;
-            color: rgba(255,255,255,0.6);
-            line-height: 27px;
-        }
-
-
     }
 }
