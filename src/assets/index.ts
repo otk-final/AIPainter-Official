@@ -27,6 +27,7 @@ const assets = {
     logo: require("@/assets/logo.png"),
     qq: require("@/assets/qq.png"),
     wechat: require("@/assets/wechat.png"),
+    ga: require("@/assets/ga.png"),
 }
 
 
