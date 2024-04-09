@@ -114,7 +114,7 @@ const HomePage = () => {
 			<img src={assets.logo} className="bottom-logo-icon" />
 			<div className='copyright'>
 			Copyright © 2024 Wuhan Turing Innovation Technology Co., Ltd.All rights reserved.<br/>
-			<a ><img src={assets.ga} alt="" width={12} /> 鄂公网安备42018502007445</a > 
+			<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42018502007445"><img src={assets.ga} width={12} /> 鄂公网安备42018502007445号</a > 
 			<a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">鄂ICP备2024046738号-1</a>
 			</div>
 		</div>
